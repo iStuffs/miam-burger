@@ -1,0 +1,101 @@
+@import "helpers/variables";
+
+/**classic**/
+.burger-menu{
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid $color-border-button;
+  background-color: $color-bg-button;
+  .barre{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height : $height-barre;
+    background: $color-barre;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    transition: .3s all ease-in-out;
+    &__top{
+    display: block;
+    top: calc(50% - #{$padding-barre});
+    }
+    &__bottom{
+    top: calc(50% + #{$padding-barre});
+    }
+  }
+}
+
+
+/**align right**/
+.burger-menu.align-right {
+  .barre {
+    right: 10%;
+    left: auto;
+    transform: translatey(-50%);
+    width: 80%;
+    &__middle {
+      width: 60%;
+    }
+    &__bottom {
+    width: 40%;
+    }
+  }
+}
+
+/* align left */
+.burger-menu.align-left {
+  .barre {
+    left: 10%;
+    transform: translatey(-50%);
+    width: 80%;
+    &__middle {
+      width: 60%;
+    }
+    &__bottom {
+    width: 40%;
+    }
+  }
+}
+
+/* dotted left */
+.burger-menu.dotted-left {
+  .barre {
+    width: 50%;
+    &::before {
+      content: '';
+      display: block;
+      height: $height-barre;
+      background-color: $color-barre;
+      width: $height-barre;
+      position: absolute;
+      left: calc( #{$height-barre} * -2 );
+    }
+  }
+}
+
+/* dotted right */
+.burger-menu.dotted-right {
+  .barre{
+    width: 50%;
+    &::after {
+      content: '';
+      display: block;
+      height: $height-barre;
+      background-color: $color-barre;
+      width: $height-barre;
+      position: absolute;
+      right:  calc( #{$height-barre} * -2 );
+    }
+  }
+}
+.menu-rounded{
+  border-radius: 50%;
+}
+.barre.rounded{
+  border-radius: 2px;
+}
