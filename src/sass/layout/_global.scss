@@ -1,6 +1,11 @@
 html, body{
   height: 100%;
   width: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
   box-sizing: border-box;
 }
 img{
@@ -12,36 +17,146 @@ body{
   text-align: center;
   padding: 3rem;
 }
-
+/**classic**/
 .burger-menu{
-cursor: pointer;
-display: block;
-width: 60px;
-height: 60px;
-background-color: #ccc;
-border-radius: 50%;
-border: none;
-position: fixed;
-bottom : 10px;
-right: 10px;
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid $color-border-button;
+  background-color: $color-bg-button;
   .barre{
     position: absolute;
     top: 50%;
     left: 50%;
-    height : 1.3px;
-    background: #fff;
+    height : $height-barre;
+    background: $color-barre;
+    transform: translate(-50%, -50%);
     width: 80%;
     &__top{
     display: block;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+    top: calc(50% - #{$padding-barre});
     }
     &__bottom{
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+    top: calc(50% + #{$padding-barre});
     }
+  }
 }
+.container-burger-classic{
+  .burger-menu{
+    position: fixed;
+    top: 100px;
+    left: 400px;
+  }
+
+}
+
+/**align right**/
+.burger-menu.align-right {
+
+  .barre{
+    right: 10%;
+    left: auto;
+    transform: translatey(-50%);
+    width: 80%;
+    &__middle{
+      width: 60%;
+    }
+    &__bottom{
+    width: 40%;
+    }
+  }
+}
+
+.container-burger-align-right{
+  .burger-menu{
+    position: fixed;
+    top: 300px;
+    left: 400px;
+  }
+
+}
+
+/* align left */
+.burger-menu.align-left {
+
+  .barre{
+    left: 10%;
+    transform: translatey(-50%);
+    width: 80%;
+    &__middle{
+      width: 60%;
+    }
+    &__bottom{
+    width: 40%;
+    }
+  }
+}
+
+.container-burger-align-left{
+  .burger-menu{
+    position: fixed;
+    top: 500px;
+    left: 400px;
+  }
+}
+
+/* dotted left */
+.burger-menu.dotted-left {
+
+  .barre{
+    width: 50%;
+    &::before {
+      content: '';
+      display: block;
+      height: $height-barre;
+      background-color: $color-barre;
+      width: $height-barre;
+      position: absolute;
+      left: calc( #{$height-barre} * -2 );
+    }
+  }
+}
+
+.container-burger-dotted-left{
+  .burger-menu{
+    position: fixed;
+    top: 700px;
+    left: 400px;
+  }
+}
+
+/* dotted right */
+.burger-menu.dotted-right {
+
+  .barre{
+    width: 50%;
+    &::after {
+      content: '';
+      display: block;
+      height: $height-barre;
+      background-color: $color-barre;
+      width: $height-barre;
+      position: absolute;
+      right:  calc( #{$height-barre} * -2 );
+    }
+  }
+}
+
+.container-burger-dotted-right{
+  .burger-menu{
+    position: fixed;
+    top: 700px;
+    left: 800px;
+  }
+}
+
+
+
+
+.barre.rounded{
+  border-radius: 2px;
 }
