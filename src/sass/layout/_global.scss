@@ -66,63 +66,6 @@ h1{
 
 
 
-.transition-basic2 {
-  .barre{
-    top:50%;
-    &__middle{
-      opacity: 0
-    }
-    &__top{
-      transform: translate(-50%,-50%) rotate(-45deg);
-    }
-    &__bottom{
-      transform: translate(-50%,-50%) rotate(45deg);
-    }
-  }
-}
-.transition-arrow {
-  .barre{
-    &__middle{
-      width: 45%
-    }
-    &__top{
-      left:55%;
-      width: 30%;
-      top: 50%;
-      transform-origin: center right;
-      transform: translate(-50%,-50%) rotate(45deg);
-    }
-    &__bottom{
-      left: 55%;
-      width: 30%;
-      top: 50%;
-      transform-origin: center right;
-      transform: translate(-50%,-50%) rotate(-45deg);
-    }
-  }
-}
-
-.transition-arrow-left {
-  .barre{
-    &__middle{
-      width: 45%
-    }
-    &__top{
-      left:45%;
-      width: 30%;
-      top: 50%;
-      transform-origin: center left;
-      transform: translate(-50%,-50%) rotate(45deg);
-    }
-    &__bottom{
-      left: 45%;
-      width: 30%;
-      top: 50%;
-      transform-origin: center left;
-      transform: translate(-50%,-50%) rotate(-45deg);
-    }
-  }
-}
 
 // .transition-basic3 {
 //   .barre{

@@ -11,6 +11,8 @@
   height: 60px;
   border: 1px solid $color-border-button;
   background-color: $color-bg-button;
+  overflow: hidden;
+  transition: .3s all ease-in-out;
   .barre{
     position: absolute;
     top: 50%;
@@ -98,4 +100,108 @@
 }
 .barre.rounded{
   border-radius: 2px;
+}
+
+/* Animations */
+
+
+.transition-basic {
+  .barre{
+    top:50%;
+    &__middle{
+      left: -200%;
+    }
+    &__top{
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &__bottom{
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::before, &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.transition-basic2 {
+  transform: rotate(180deg);
+  .barre{
+    top:50%;
+    &__middle{
+      opacity: 0
+    }
+    &__top{
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &__bottom{
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+  }
+}
+
+.transition-arrow {
+  .barre{
+    &__middle{
+      width: 45%
+    }
+    &__top{
+      left:55%;
+      width: 30%;
+      top: 50%;
+      transform-origin: center right;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &__bottom{
+      left: 55%;
+      width: 30%;
+      top: 50%;
+      transform-origin: center right;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  }
+}
+
+.transition-arrow-left {
+  .barre{
+    &__middle{
+      width: 45%
+    }
+    &__top{
+      left:45%;
+      width: 30%;
+      top: 50%;
+      transform-origin: center left;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &__bottom{
+      left: 45%;
+      width: 30%;
+      top: 50%;
+      transform-origin: center left;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  }
+}
+
+.transition-roll{
+  .barre{
+  animation-name: full;
+  animation-duration: .4s;
+  animation-fill-mode :forwards;
+  }
+}
+
+@keyframes full {
+  0%{
+  width: 80%;
+  }
+  50%{
+  width : 100%;
+  height : 10px;
+
+  }
+  100%{
+  height: 35px;
+  width: 100%;
+  }
 }

@@ -3,7 +3,7 @@ $(".burger-menu").on("click", function(){
   console.log(animation);
   if (!animation) {
     console.log('coucou');
-    animation = 'transition-basic2';
+    animation = 'transition-basic';
   }
   $(this).stop().toggleClass(animation);
 });
