@@ -41,8 +41,8 @@ Il faudra naviguer dans le fichier `src/sass/helpers/_variables.scss`
 
 | Variables | Dédinition |
 | -------- | ---------- |
-| $color-bg-button | couleur de fond du menu |
-| $color-barre | couleur des barres du menu |
-| $color-border-button | couleur de la bordure du menu |
-| $height-barre | hauteur des barres du menu |
-| $padding-barre | espace entre les barres su |
+| $button-background-color | couleur de fond du menu |
+| $bars-color | couleur des barres du menu |
+| $button-border-color | couleur de la bordure du menu |
+| $bars-height | hauteur des barres du menu |
+| $bars-padding | espace entre les barres su |

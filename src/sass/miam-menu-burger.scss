@@ -1,50 +1,50 @@
 @import "helpers/variables";
 
 /**classic**/
-.burger-menu{
+.burger-menu {
   position: fixed;
   top: 100px;
   left: 100px;
   cursor: pointer;
-  display: block;
-  width: 60px;
-  height: 60px;
-  border: 1px solid $color-border-button;
-  background-color: $color-bg-button;
+  width: $button-width;
+  height: $button-width;
+  border: $button-border-width solid $button-border-color;
+  background-color: $button-background-color;
   overflow: hidden;
-  transition: .3s all ease-in-out;
-  .barre{
+  transition: $duration all $easing;
+  .barre {
     position: absolute;
     top: 50%;
     left: 50%;
-    height : $height-barre;
-    background: $color-barre;
+    height : $bars-height;
+    @if $bars-rounded {
+      border-radius: $bars-height;
+    }
+    background: $bars-color;
     transform: translate(-50%, -50%);
     width: 80%;
-    transition: .3s all ease-in-out;
-    &__top{
+    transition: $duration all $easing;
+    &__top {
     display: block;
-    top: calc(50% - #{$padding-barre});
+    top: calc(50% - #{$bars-padding});
     }
-    &__bottom{
-    top: calc(50% + #{$padding-barre});
+    &__bottom {
+    top: calc(50% + #{$bars-padding});
     }
   }
 }
-
 
 /**align right**/
 .burger-menu.align-right {
   .barre {
     right: 10%;
     left: auto;
-    transform: translatey(-50%);
-    width: 80%;
+    transform: translate(0,-50%);
     &__middle {
       width: 60%;
     }
     &__bottom {
-    width: 40%;
+      width: 40%;
     }
   }
 }
@@ -53,13 +53,12 @@
 .burger-menu.align-left {
   .barre {
     left: 10%;
-    transform: translatey(-50%);
-    width: 80%;
+    transform: translate(0,-50%);
     &__middle {
       width: 60%;
     }
     &__bottom {
-    width: 40%;
+      width: 40%;
     }
   }
 }
@@ -70,32 +69,36 @@
     width: 50%;
     &::before {
       content: '';
-      display: block;
-      height: $height-barre;
-      background-color: $color-barre;
-      width: $height-barre;
+      height: $bars-height;
+      background-color: $bars-color;
+      width: $bars-height;
       position: absolute;
-      left: calc( #{$height-barre} * -2 );
+      left: calc( #{$bars-height} * -2 );
+      @if $bars-rounded {
+        border-radius: 50%;
+      }
     }
   }
 }
 
 /* dotted right */
 .burger-menu.dotted-right {
-  .barre{
+  .barre {
     width: 50%;
     &::after {
       content: '';
-      display: block;
-      height: $height-barre;
-      background-color: $color-barre;
-      width: $height-barre;
+      height: $bars-height;
+      background-color: $bars-color;
+      width: $bars-height;
       position: absolute;
-      right:  calc( #{$height-barre} * -2 );
+      right:  calc( #{$bars-height} * -2 );
+      @if $bars-rounded {
+        border-radius: 50%;
+      }
     }
   }
 }
-.menu-rounded{
+.menu-rounded {
   border-radius: 50%;
 }
 .barre.rounded{
@@ -103,18 +106,18 @@
 }
 
 /* Animations */
-
-
-.transition-basic {
-  .barre{
+.burger-menu.transition-basic {
+  .barre {
     top:50%;
-    &__middle{
+    left: 50%;
+    width: 80%;
+    &__middle {
       left: -200%;
     }
-    &__top{
+    &__top {
       transform: translate(-50%,-50%) rotate(-45deg);
     }
-    &__bottom{
+    &__bottom {
       transform: translate(-50%,-50%) rotate(45deg);
     }
     &::before, &::after {
@@ -123,26 +126,36 @@
   }
 }
 
-.transition-basic2 {
+.burger-menu.transition-basic2 {
   transform: rotate(180deg);
-  .barre{
-    top:50%;
-    &__middle{
+  border-radius: 50%;
+  .barre {
+    left: 50%;
+    width: 80%;
+    top: 50%;
+    &__middle {
       opacity: 0
     }
-    &__top{
+    &__top {
       transform: translate(-50%,-50%) rotate(-45deg);
     }
-    &__bottom{
+    &__bottom {
       transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::before, &::after {
+      opacity: 0;
     }
   }
 }
 
-.transition-arrow {
-  .barre{
+.burger-menu.transition-arrow {
+  .barre {
+    left: 50%;
+    right: auto;
+    width: 80%;
     &__middle{
-      width: 45%
+      width: 44%;
+      transform: translate(-50%,-50%)
     }
     &__top{
       left:55%;
@@ -158,13 +171,20 @@
       transform-origin: center right;
       transform: translate(-50%,-50%) rotate(-45deg);
     }
+    &::before, &::after {
+      opacity: 0;
+    }
   }
 }
 
-.transition-arrow-left {
-  .barre{
+.burger-menu.transition-arrow-left {
+  .barre {
+    left: 50%;
+    right: auto;
+    width: 80%;
     &__middle{
-      width: 45%
+      width: 44%;
+      transform: translate(-50%,-50%);
     }
     &__top{
       left:45%;
@@ -180,10 +200,13 @@
       transform-origin: center left;
       transform: translate(-50%,-50%) rotate(-45deg);
     }
+    &::before, &::after {
+      opacity: 0;
+    }
   }
 }
 
-.transition-roll{
+/*.transition-roll{
   .barre{
   animation-name: full;
   animation-duration: .4s;
@@ -204,4 +227,4 @@
   height: 35px;
   width: 100%;
   }
-}
+}*/

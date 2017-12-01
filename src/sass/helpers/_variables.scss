@@ -1,7 +1,22 @@
-$color-bg-button : #ccc;
-$color-barre : green;
-$color-border-button : black;
-$height-barre : 3px;
-$padding-barre : 20%;
+/* button */
+$button-width : 60px !default;
+
+$button-background-color : #ccc !default;
+
+$button-border-color: black !default;
+$button-border-width: 1px !default;
+
+
+/* bars */
+$bars-color: green !default;
+$bars-height: 3px !default;
+$bars-padding: 20% !default;
+$bars-rounded: true !default;
+
+/* transition */
+$easings: (ease-in-out:'ease-in-out', bouncy: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)' );
+
+$easing: unquote(map-get($easings, bouncy)) !default;
+$duration : .3s !default;
 
 //$pos-menu: map(top: 10px, right: 10px)
