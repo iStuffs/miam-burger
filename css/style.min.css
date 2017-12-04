@@ -1,0 +1,27 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap-reboot.min.css';
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem;
+  background: #fff; }
+
+h1 {
+  padding: 2rem; }
+
+/**classic**/
+.container-burger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.burger-menu {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 50px; }
+/*# sourceMappingURL=style.min.css.map */

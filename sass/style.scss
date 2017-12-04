@@ -1,3 +1,6 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap-reboot.min.css';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -6,7 +9,7 @@ body {
   padding: 3rem;
   background: #fff;
 }
-h1{
+h1 {
   padding: 2rem;
 }
 /**classic**/
@@ -15,7 +18,7 @@ h1{
   justify-content: center;
 }
 
-.burger-menu{
+.burger-menu {
   position: relative;
   top: auto;
   left: auto;

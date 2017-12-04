@@ -1,4 +1,4 @@
-@import "helpers/variables";
+@import "miam-menu-variables";
 
 /**classic**/
 .burger-menu {
@@ -198,6 +198,91 @@
       width: 30%;
       top: 50%;
       transform-origin: center left;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &::before, &::after {
+      opacity: 0;
+    }
+  }
+}
+.burger-menu.transition-arrow-alt {
+  .barre {
+    left: 50%;
+    right: auto;
+    width: 50%;
+    &__middle{
+      width: 44%;
+      left: 200%;
+      transform: translate(-50%,-50%);
+    }
+    &__top{
+      left:45%;
+
+      top: 50%;
+      transform-origin: center left;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &__bottom{
+      left: 45%;
+      top: 50%;
+      transform-origin: center left;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &::before, &::after {
+      opacity: 0;
+    }
+  }
+}
+.burger-menu.transition-arrow-right-alt {
+  .barre {
+    left: 50%;
+    right: auto;
+    width: 50%;
+    &__middle{
+      width: 44%;
+      left: 200%;
+      transform: translate(-50%,-50%);
+    }
+    &__top{
+      left:45%;
+
+      top: 50%;
+      transform-origin: center right;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &__bottom{
+      left: 45%;
+      top: 50%;
+      transform-origin: center right;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &::before, &::after {
+      opacity: 0;
+    }
+  }
+}
+.burger-menu.transition-arrow-down-alt {
+  transform: rotate(90deg);
+  .barre {
+    left: 50%;
+    right: auto;
+    width: 50%;
+    &__middle{
+      width: 44%;
+      left: 200%;
+      transform: translate(-50%,-50%);
+    }
+    &__top{
+      left:45%;
+
+      top: 50%;
+      transform-origin: center right;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &__bottom{
+      left: 45%;
+      top: 50%;
+      transform-origin: center right;
       transform: translate(-50%,-50%) rotate(-45deg);
     }
     &::before, &::after {
