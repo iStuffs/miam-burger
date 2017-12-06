@@ -1,10 +1,11 @@
 @import "miam-menu-variables";
+@import "miam-menu-animation";
 
 /**classic**/
 .burger-menu {
   position: fixed;
-  top: 100px;
-  left: 100px;
+  top: 10px;
+  left: 10px;
   cursor: pointer;
   width: $button-width;
   height: $button-width;
@@ -34,7 +35,7 @@
   }
 }
 
-/**align right**/
+/* align right */
 .burger-menu.align-right {
   .barre {
     right: 10%;
@@ -125,6 +126,25 @@
     }
   }
 }
+.burger-menu.transition-basic-right {
+  .barre {
+    top:50%;
+    left: 50%;
+    width: 80%;
+    &__middle {
+      left: 200%;
+    }
+    &__top {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &__bottom {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::before, &::after {
+      opacity: 0;
+    }
+  }
+}
 
 .burger-menu.transition-basic2 {
   transform: rotate(180deg);
@@ -191,14 +211,14 @@
       width: 30%;
       top: 50%;
       transform-origin: center left;
-      transform: translate(-50%,-50%) rotate(45deg);
+      transform: translate(-50%,-50%) rotate(-45deg);
     }
     &__bottom{
       left: 45%;
       width: 30%;
       top: 50%;
       transform-origin: center left;
-      transform: translate(-50%,-50%) rotate(-45deg);
+      transform: translate(-50%,-50%) rotate(45deg);
     }
     &::before, &::after {
       opacity: 0;
@@ -289,6 +309,20 @@
       opacity: 0;
     }
   }
+}
+
+.burger-menu.squize:hover {
+  .barre {
+    &__top{
+      top: calc(50% - #{$bars-padding} / 2);
+    }
+    &__bottom{
+      top: calc(50% + #{$bars-padding} / 2);
+    }
+  }
+}
+.burger-menu.rotate:hover {
+  transform: rotate(90deg);
 }
 
 /*.transition-roll{
