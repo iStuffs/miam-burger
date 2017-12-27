@@ -1,48 +1,91 @@
-# Miam Menu Burger - Custom Your Burger Menu
+# :hamburger: Miam Burger! - A toasty burger menu library.
 
-## Ce qu'il faut avoir :
-- une version de jquery
-- gulp (pour utiliser les variables scss)
+![](docs/img/miam-burger_header.png)
 
-## Que faut-il faire?
-- téléchargez le fichier .zip
-- ajoutez la ficher *miam-menu-burger.min.css* à votre projet
+## What you'll need
+
+-   A version of [jQuery](https://jquery.com)
+-   *Optional: a way to compile scss.*
+
+## How to get set
+
+-   Download the .zip archive
+
+-   Add the *miam-menu-burger.min.css* stylesheet link into your head tag.
+
 ```html
-<link rel="stylesheet" href="miam-menu-burger.min.scss">
+<link rel="stylesheet" href="css/miam-menu-burger.min.scss">
 ```
-- ajouter le fichier *miam-menu-burger.min.js* après jquery à la fin de votre body
+
+-   add the *miam-menu-burger.min.js* script file after jquery at the end of your body tag.
+
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/miam-menu-burger.min.js"></script>
 ```
-- dans le fichier .html créer un burger menu de la façon suivante
+
+-   To create a burger menu copy this template in your html file.
+
 ```html
-<div class="container-burger">
   <button class="burger-menu">
     <span class="barre barre__top"></span>
     <span class="barre barre__middle"></span>
     <span class="barre barre__bottom"></span>
   </button>
-</div>
 ```
 
-## Vous pouvez commencer la customisation de votre burger!!
+## Make the burger your own!
 
-### changer l'aspect de votre miam-menu-burger
-Plusieurs aspects sont disponibles, il y a en a cinq au total.
-Afin d'obtenir un style ou l'autre, ajoutez une classe de la façon suivante.
-  - `<button class="burger-menu align-right">`
-  - `<button class="burger-menu align-left">`
-  - `<button class="burger-menu dotted-left">`
-  - `<button class="burger-menu dotted-right">`
+### Change the face of your menu burger
 
-### changer les couleurs de votre miam-menu-burger
-Il faudra naviguer dans le fichier `src/sass/helpers/_variables.scss`
+> You can easily customise your menu with a class attribute.
 
-| Variables | Dédinition |
-| -------- | ---------- |
-| $button-background-color | couleur de fond du menu |
-| $bars-color | couleur des barres du menu |
-| $button-border-color | couleur de la bordure du menu |
-| $bars-height | hauteur des barres du menu |
-| $bars-padding | espace entre les barres su |
+```html
+  <button class="burger-menu align-right">
+    <span class="barre barre__top"></span>
+    <span class="barre barre__middle"></span>
+    <span class="barre barre__bottom"></span>
+  </button>
+```
+
+**There is 5 different faces.**
+
+-   **classic**: `burger-menu`
+-   **various length right aligned**: `align-right`
+-   **various length left aligned**: `align-left`
+-   **dot menu left aligned**: `dotted-left`
+-   **dot menu right aligned**: `dotted-right`
+
+### Change the animation of your menu burger
+
+> Change the animation with a data attribute
+
+```html
+  <button class="burger-menu align-right" data-menu-animation="transition-basic">
+    <span class="barre barre__top"></span>
+    <span class="barre barre__middle"></span>
+    <span class="barre barre__bottom"></span>
+  </button>
+```
+
+**There is 7 to choose from.**
+
+-   `transition-basic`
+-   `transition-basic2`
+-   `transition-arrow`
+-   `transition-arrow-left`
+-   `transition-arrow-alt`
+-   `transition-arrow-right-alt`
+-   `transition-arrow-down-alt`
+
+## Get the full power of the library with scss
+
+You have to navigate through the file `src/sass/helpers/_variables.scss` and edit the sass variables.
+
+| Variables                  | Definition                   |
+| -------------------------- | ---------------------------- |
+| *$button-background-color* | background color of the menu |
+| *$bars-color*              | color of the bars            |
+| *$button-border-color*     | border color of the menu     |
+| *$bars-height*             | bars height                  |
+| *$bars-padding*            | padding between the bars     |
