@@ -1,11 +1,22 @@
 {
-  "name": "Miam-menu",
-  "version": "0.1",
-  "description": "A css/js library for menuburger",
-  "main": "index.js",
+  "name": "miam-burger",
+  "version": "0.0.1",
+  "description": "A css/js library for menu burger",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "iStuffs: Samuel DIDIER-LAURENT",
-  "license": "ISC"
+  "author": "iStuffs: Samuel DIDIER-LAURENT <istuffs@gmail.com> (https://istuffs.be)",
+  "license": "ISC",
+  "directories": {
+    "doc": "docs"
+  },
+  "homepage": "https://github.com/iStuffs/burger-menu-library#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iStuffs/miam-burger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iStuffs/miam-burger/issues"
+  }
 }
